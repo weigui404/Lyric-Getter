@@ -21,7 +21,6 @@ import cn.lyric.getter.tool.BackupTools
 import cn.lyric.getter.tool.ConfigTools.config
 import cn.lyric.getter.tool.Tools.getPhoneName
 import cn.lyric.getter.tool.Tools.restartTheScopedSoftware
-import cn.lyric.getter.ui.adapter.NoticeAdapter
 import cn.lyric.getter.ui.viewmodel.HomeViewModel
 import cn.lyric.getter.ui.viewmodel.ShareViewModel
 import cn.xiaowine.dsp.DSP
@@ -91,19 +90,6 @@ class HomeFragment : Fragment() {
                 }
                 floatingActionButton.visibility = View.GONE
             } else {
-                homeViewModel.noticeList.observe(viewLifecycleOwner) {
-                    if (it.isEmpty()) {
-                        notice.visibility = View.GONE
-                    } else {
-                        viewPager.adapter = NoticeAdapter(it)
-                        notice.visibility = View.VISIBLE
-                    }
-                    if (it.size == 1) {
-                        indicator.visibility = View.GONE
-                    } else {
-                        indicator.visibility = View.VISIBLE
-                    }
-                }
                 floatingActionButton.setOnClickListener { view ->
                     Snackbar.make(view, getString(R.string.restart_the_scoped_software), Snackbar.LENGTH_LONG).apply {
                         anchorView = view
@@ -160,11 +146,6 @@ class HomeFragment : Fragment() {
             appRulesVersionValue.text = homeViewModel.appRulesVersionValue ?: getAppRules().appRulesVersion.toString()
             appRulesApiVersionValue.text = BuildConfig.APP_RULES_API_VERSION.toString()
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        homeViewModel.getNotice()
     }
 
     override fun onDestroyView() {
