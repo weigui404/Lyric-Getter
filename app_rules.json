@@ -541,8 +541,38 @@
           "remarks": ""
         }
       ]
+    },
+    {
+      "packageName": "org.akanework.gramophone",
+      "name": "Gramophone",
+      "rules": [
+        {
+          "startVersionCode": 17,
+          "endVersionCode": 2147483647,
+          "excludeVersions": [],
+          "apiVersion": 6,
+          "useApi": false,
+          "getLyricType": 0,
+          "remarks": "请设置中打开开关"
+        }
+      ]
+    },
+    {
+      "packageName": "music.hifistatus",
+      "name": "音乐播放器",
+      "rules": [
+        {
+          "startVersionCode": 16,
+          "endVersionCode": 2147483647,
+          "excludeVersions": [],
+          "apiVersion": 6,
+          "useApi": true,
+          "getLyricType": 0,
+          "remarks": ""
+        }
+      ]
     }
   ],
-  "appRulesVersion": 13,
-  "version": 10
+  "appRulesVersion": 14,
+  "version": 11
 }
