@@ -4,15 +4,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import cn.lyric.getter.BuildConfig
-import cn.lyric.getter.data.NoticeData
 import cn.lyric.getter.tool.JsonTools
 import cn.xiaowine.xkt.SimpleHttpTool.get
 import kotlin.collections.set
 import kotlin.text.get
 
 class HomeViewModel(private val state: SavedStateHandle) : ViewModel() {
-    var noticeList: MutableLiveData<ArrayList<NoticeData>> = MutableLiveData()
-
     var scrollY: Int
         get() = state["scrollY"] ?: 0
         set(value) {
@@ -34,24 +31,4 @@ class HomeViewModel(private val state: SavedStateHandle) : ViewModel() {
         set(value) {
             state["buildTimeValue"] = value
         }
-
-    fun getNotice() {
-        Thread {
-            "https://xiaowine.github.io/Lyric-Getter/notice_list.json".get(onSuccess = {
-                val list: ArrayList<NoticeData> = JsonTools.json.decodeFromString(it)
-                val b = list.filter { notice -> notice.apiVersion == BuildConfig.API_VERSION }
-                    .sortedByDescending { notice -> notice.apiVersion }
-                    .isNotEmpty()
-                if (b) {
-                    noticeList.postValue(list)
-                } else {
-                    noticeList.postValue(ArrayList())
-                }
-
-            }, onError = {
-                it.printStackTrace()
-                noticeList.postValue(ArrayList())
-            })
-        }.start()
-    }
 }

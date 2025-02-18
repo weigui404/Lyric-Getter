@@ -68,7 +68,6 @@
   <string name="enforced_mode">強制モード</string>
   <string name="current_status">現在の状態</string>
   <string name="rules_are_only_for_viewing_supported_versions">アプリのサポートリストは、サポートされているアプリバージョンを表示するための物です。\n実際の取得とは多少の相違がある可能性があります。\n実際のフックは歌詞を取得してこのページのデータは参照しません。</string>
-  <string name="notice">お知らせ</string>
   <string name="salt_use_flyme">Salt Player で Meizu モードを使用</string>
   <string name="salt_use_flyme_summary">API モードが通常時での切り替えを行うことは非推奨です</string>
   <string name="multiple_modes_work">通常使用できるモードが複数あります</string>

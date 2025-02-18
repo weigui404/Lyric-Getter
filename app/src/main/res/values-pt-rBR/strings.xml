@@ -67,7 +67,6 @@
     <string name="enforced_mode">Modo forçado</string>
     <string name="current_status">Status atual</string>
     <string name="rules_are_only_for_viewing_supported_versions">A Lista de suporte de apps serve apenas para ver versões de software suportadas.\nPode haver algumas discrepâncias com a aquisição real.\nO hook real busca as letras e não se refere aos dados nesta página.</string>
-    <string name="notice">Aviso</string>
     <string name="salt_use_flyme">Salt/Sweet e Sour Music usa interface de letras da barra de status Meizu</string>
     <string name="salt_use_flyme_summary">Não é recomendado alternar quando o Modo da API estiver normal</string>
     <string name="multiple_modes_work">Existem vários modos que podem ser usados ​​normalmente</string>
