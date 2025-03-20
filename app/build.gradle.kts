@@ -22,9 +22,9 @@ android {
     defaultConfig {
         applicationId = "cn.lyric.getter"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 25
-        versionName = "2.0.25"
+        targetSdk = 36
+        versionCode = 26
+        versionName = "2.0.26"
         dependenciesInfo.includeInApk = false
         ndk.abiFilters += arrayOf("arm64-v8a", "armeabi-v7a", "x86", "x86_64")
         buildConfigField("long", "BUILD_TIME", "$buildTime")
@@ -94,5 +94,7 @@ dependencies {
     implementation(libs.cardSlider)
     implementation(libs.modernandroidpreferences)
     implementation(libs.swiperefreshlayout)
-
+    implementation(libs.markwon)
+    implementation(libs.markwon.image)
+    implementation(libs.markwon.image.glide)
 }

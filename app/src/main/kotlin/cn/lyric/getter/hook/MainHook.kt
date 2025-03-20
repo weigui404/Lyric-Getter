@@ -26,6 +26,8 @@ import cn.lyric.getter.hook.app.Qinalt
 import cn.lyric.getter.hook.app.RPlayer
 import cn.lyric.getter.hook.app.Salt
 import cn.lyric.getter.hook.app.MusicPlayer
+import cn.lyric.getter.hook.app.Oppo
+import cn.lyric.getter.hook.app.Poweramp
 import cn.lyric.getter.hook.app.SystemUi
 import cn.lyric.getter.hook.app.Toside
 import cn.xiaowine.xkt.LogTool
@@ -67,6 +69,9 @@ class MainHook : IXposedHookLoadPackage, IXposedHookZygoteInit {
             "com.huawei.music" -> initHooks(Huawei)
             "org.akanework.gramophone" -> initHooks(Gramophone)
             "music.hifistatus" -> initHooks(MusicPlayer)
+            "com.heytap.music" -> initHooks(Oppo)
+            "com.oppo.music" -> initHooks(Oppo)
+            "com.maxmpz.audioplayer" -> initHooks(Poweramp)
             else -> initHooks(Api)
         }
     }
