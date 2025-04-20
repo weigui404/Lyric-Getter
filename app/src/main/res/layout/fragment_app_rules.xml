@@ -41,7 +41,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <!--com.google.android.material.card.MaterialCardView
                         android:id="@+id/card"
                         style="@style/Widget.Material3.CardView.Elevated"
                         android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                             android:textAppearance="?textAppearanceTitleMedium"
                             android:textColor="?colorOnPrimary"
                             android:textSize="16sp" />
-                    </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView-->
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recycler_view"

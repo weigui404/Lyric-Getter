@@ -1,4 +1,4 @@
-package cn.lyric.getter.data
+/* package cn.lyric.getter.data
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -11,3 +11,4 @@ data class NoticeData(
     val url: String = "",
     @SerialName("api_version") val apiVersion: Int = 0,
 )
+*/

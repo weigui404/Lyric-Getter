@@ -1,4 +1,4 @@
-package cn.lyric.getter.ui.adapter
+/* package cn.lyric.getter.ui.adapter
 
 import android.text.Html
 import android.view.LayoutInflater
@@ -44,3 +44,4 @@ class NoticeAdapter(private val noticeDataList: ArrayList<NoticeData>) : CardSli
         }
     }
 }
+*/

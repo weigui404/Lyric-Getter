@@ -21,7 +21,7 @@ import cn.lyric.getter.tool.BackupTools
 import cn.lyric.getter.tool.ConfigTools.config
 import cn.lyric.getter.tool.Tools.getPhoneName
 import cn.lyric.getter.tool.Tools.restartTheScopedSoftware
-import cn.lyric.getter.ui.adapter.NoticeAdapter
+// import cn.lyric.getter.ui.adapter.NoticeAdapter
 import cn.lyric.getter.ui.viewmodel.HomeViewModel
 import cn.lyric.getter.ui.viewmodel.ShareViewModel
 import cn.xiaowine.dsp.DSP
@@ -91,7 +91,7 @@ class HomeFragment : Fragment() {
                 }
                 floatingActionButton.visibility = View.GONE
             } else {
-                homeViewModel.noticeList.observe(viewLifecycleOwner) {
+            /*    homeViewModel.noticeList.observe(viewLifecycleOwner) {
                     if (it.isEmpty()) {
                         notice.visibility = View.GONE
                     } else {
@@ -103,7 +103,7 @@ class HomeFragment : Fragment() {
                     } else {
                         indicator.visibility = View.VISIBLE
                     }
-                }
+                } */
                 floatingActionButton.setOnClickListener { view ->
                     Snackbar.make(view, getString(R.string.restart_the_scoped_software), Snackbar.LENGTH_LONG).apply {
                         anchorView = view
@@ -152,21 +152,21 @@ class HomeFragment : Fragment() {
             }
             deviceValue.text = "$getPhoneName (${Build.DEVICE}) Android ${Build.VERSION.RELEASE}"
             versionLabelValue.text = BuildConfig.VERSION_NAME
-            versionCodeValue.text = BuildConfig.VERSION_CODE.toString()
+            // versionCodeValue.text = BuildConfig.VERSION_CODE.toString()
             versionTypeValue.text = BuildConfig.BUILD_TYPE.toUpperFirstCaseAndLowerOthers()
             buildTimeValue.text = homeViewModel.buildTimeValue ?: SimpleDateFormat("yyyy-MM-dd HH:mm z", Locale.getDefault()).format(BuildConfig.BUILD_TIME)
             apiVersionValue.text = BuildConfig.API_VERSION.toString()
-            configVersionValue.text = BuildConfig.CONFIG_VERSION.toString()
+            // configVersionValue.text = BuildConfig.CONFIG_VERSION.toString()
             appRulesVersionValue.text = homeViewModel.appRulesVersionValue ?: getAppRules().appRulesVersion.toString()
             appRulesApiVersionValue.text = BuildConfig.APP_RULES_API_VERSION.toString()
         }
     }
 
-    override fun onStart() {
+/*    override fun onStart() {
         super.onStart()
         homeViewModel.getNotice()
     }
-
+*/
     override fun onDestroyView() {
         super.onDestroyView()
         homeViewModel.apply {
